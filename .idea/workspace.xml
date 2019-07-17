@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0ae89f0-2796-4bf3-825d-f216e5296a67" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/roi_imgs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/human_detection_and_perspective_transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/human_id_test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccv.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/human_id_test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/detect_and_transform.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/goose.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/ccv.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/plot.png" beforeDir="false" />
     </list>
     <ignored path="videos/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,23 +19,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ccv.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/roi_imgs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="504">
+              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
               <folding>
-                <element signature="e#100#118#0" expanded="true" />
+                <element signature="e#103#121#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/human_id_test1.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ccv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+            <state relative-caret-position="696">
+              <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+              <folding>
+                <element signature="e#141#156#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,6 +65,7 @@
       <list>
         <option value="$USER_HOME$/Desktop/ccv.py" />
         <option value="$PROJECT_DIR$/human_id_test1.py" />
+        <option value="$PROJECT_DIR$/detection_yolov3.py" />
         <option value="$PROJECT_DIR$/ccv.py" />
       </list>
     </option>
@@ -83,16 +92,6 @@
               <item name="human_identification" type="b2602c69:ProjectViewProjectNode" />
               <item name="human_identification" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="human_identification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="human_identification" type="462c0819:PsiDirectoryNode" />
-              <item name="output" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="human_identification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="human_identification" type="462c0819:PsiDirectoryNode" />
-              <item name="videos" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -130,7 +129,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563274134579</updated>
-      <workItem from="1563274136370" duration="4483000" />
+      <workItem from="1563274136370" duration="10832000" />
     </task>
     <task id="LOCAL-00001" summary="a long long time ago...">
       <created>1563275012229</created>
@@ -139,14 +138,22 @@
       <option name="project" value="LOCAL" />
       <updated>1563275012229</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="sample code for color coherence vector">
+      <created>1563342726810</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1563342726810</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4483000" />
+    <option name="totallyTimeSpent" value="10832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="71" y="0" width="1829" height="1447" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18258904" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -178,7 +185,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="a long long time ago..." />
-    <option name="LAST_COMMIT_MESSAGE" value="a long long time ago..." />
+    <MESSAGE value="sample code for color coherence vector" />
+    <option name="LAST_COMMIT_MESSAGE" value="sample code for color coherence vector" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../whereareyou/human_detection_on_floor.py">
@@ -201,25 +209,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/human_id_test1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ccv.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
       <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/output/ccv.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret column="43" lean-forward="true" selection-start-column="43" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detect_and_transform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding>
+            <element signature="e#75#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../whereareyou/detection_yolov3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1728">
+          <caret line="101" column="83" selection-start-line="101" selection-start-column="83" selection-end-line="101" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../whereareyou/get_coord_video.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="46" column="68" lean-forward="true" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roi_imgs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <element signature="e#103#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ccv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="696">
+          <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
           <folding>
-            <element signature="e#100#118#0" expanded="true" />
+            <element signature="e#141#156#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -30,15 +30,6 @@ ln = net.getLayerNames()
 ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
 
 
-point_list = []
-count = 0
-def mouse_callback(event, x, y, flags, param):
-    global point_list, count, img_original
-    if event == cv2.EVENT_LBUTTONDOWN:
-        point_list.append((x, y))
-        cv2.circle(img_original, (x, y), 3, (0, 0, 255), -1)
-
-
 filename = args["input"][7:-4]
 cv2.namedWindow('original')
 cv2.setMouseCallback('original', mouse_callback)

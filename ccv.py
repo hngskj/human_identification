@@ -2,15 +2,17 @@
 # https://github.com/tamanobi/ccv/blob/master/ccv.py
 
 # USAGE
-# python ccv.py --input images/goose.jpg --threshold 5
+# python ccv.py --input goose.jpg --threshold 5
 
+import argparse
 import numpy as np
 import cv2
-import argparse
+import matplotlib.pyplot as plt
 
+PATH = 'detected/'
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input", required=True)
-ap.add_argument("-n", "--threshold", type=int, default=64)
+ap.add_argument("-n", "--threshold", type=int)
 args = vars(ap.parse_args())
 
 def QuantizeColor(img, n=64):
@@ -43,10 +45,12 @@ def ccv(src, tau=0, n=64):
     img = QuantizeColor(img, n)
     bgr = cv2.split(img)
     # bgr = cv2.split(cv2.cvtColor(img, cv2.COLOR_BGR2HSV))
+    # bgr = cv2.split(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY))
     if tau == 0:
         tau = row * col * 0.1
     alpha = np.zeros(n)
     beta = np.zeros(n)
+    gamma = [0,0]
     # labeling
     for i, ch in enumerate(bgr):
         ret, th = cv2.threshold(ch, 127, 255, 0)
@@ -54,6 +58,7 @@ def ccv(src, tau=0, n=64):
         # generate ccv
         areas = [[v[4], label_idx] for label_idx, v in enumerate(stat)]
         coord = [[v[0], v[1]] for label_idx, v in enumerate(stat)]
+        # print(areas, coord)
         # Counting
         for a, c in zip(areas, coord):
             area_size = a[0]
@@ -64,31 +69,34 @@ def ccv(src, tau=0, n=64):
                     alpha[bin_idx] = alpha[bin_idx] + area_size
                 else:
                     beta[bin_idx] = beta[bin_idx] + area_size
-    return alpha, beta
+    return alpha, beta, gamma
 
 
-def ccv_plot(img, alpha, beta, n=64):
-    import matplotlib.pyplot as plt
+def ccv_plot(img, alpha, beta, gamma, n=64):
     X = [x for x in range(n * 2)]
     Y = alpha.tolist() + beta.tolist()
-    with open('output/ccv.csv', 'w') as f:
-        f.write(str(Y))
     im = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    # im = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     plt.subplot(2, 1, 1)
-    plt.imshow(im)
+    plt.imshow(im, cmap='gray')
     plt.subplot(2, 1, 2)
     plt.bar(X, Y, align='center')
-    # plt.yscale('log')
+    plt.yscale('log')
     plt.xticks(X, (['alpha']*n)+(['beta']*n))
-    plt.savefig('output/plot.png')
+    plt.savefig('output/{}_plot.png'.format(args["input"]))
     plt.show()
 
 
 if __name__ == '__main__':
-    img = cv2.imread(args["input"])
+    img = cv2.imread(PATH + args["input"])
     n = args["threshold"]
-    alpha, beta = ccv(img, tau=0, n=n)
-    CCV = alpha.tolist() + beta.tolist()
-    assert (sum(CCV) == img.size)
-    assert (n == len(alpha) and n == len(beta))
-    ccv_plot(img, alpha, beta, n)
+    alpha, beta, gamma = ccv(img, tau=0, n=n)
+    a_l = alpha.tolist()
+    b_l = beta.tolist()
+    CCV = list(zip(a_l, b_l))
+    print(CCV)
+    # CCV = alpha.tolist() + beta.tolist()
+    ccv_plot(img, alpha, beta, gamma, n)
+
+    with open('output/{}_ccv.csv'.format(args["input"]), 'w') as f:
+        f.write(str(CCV))
