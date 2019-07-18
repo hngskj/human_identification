@@ -1,5 +1,5 @@
 # USAGE
-# python detection.py --input videos/sample1.mp4 --output output/sample1.avi --yolo yolo-coco
+# python roi_imgs.py --input videos/two_people.mp4 --output detected/two_people --yolo yolo-coco
 
 import numpy as np
 import argparse
@@ -90,9 +90,10 @@ while True:
             x_center = int((x+x+w)/2)
             y_bottom = y+h
 
-            print(f)
+            file_id = str(f) + "_" + str(i)
+            print(file_id)
             roi = frame[y:y+h, x:x+w]
-            cv2.imwrite('detected/'+str(f)+'.jpg', roi)
+            cv2.imwrite(args["output"]+"/"+file_id+'.jpg', roi)
 
 
             # color = [int(c) for c in COLORS[classIDs[i]]]

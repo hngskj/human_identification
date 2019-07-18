@@ -2,15 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0ae89f0-2796-4bf3-825d-f216e5296a67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/roi_imgs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/one/0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/one/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/one/100.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/one/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/one/30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/one/40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/one/50.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/one/60.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/one/70.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/one/80.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/one/90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/0_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/0_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/100_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/100_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/200_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/200_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/300_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/300_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/400_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/400_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/500_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/500_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/600_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/600_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/700_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/700_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/800_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/801_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/900_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/input/two/900_1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ccv.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/human_id_test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/detect_and_transform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/goose.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/ccv.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detected/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/roi_imgs.py" beforeDir="false" afterPath="$PROJECT_DIR$/roi_imgs.py" afterDir="false" />
     </list>
     <ignored path="videos/" />
+    <ignored path="detected/" />
+    <ignored path="images/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/roi_imgs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="663">
+              <caret line="79" column="60" selection-start-line="79" selection-start-column="60" selection-end-line="79" selection-end-column="60" />
               <folding>
                 <element signature="e#103#121#0" expanded="true" />
               </folding>
@@ -34,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ccv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+            <state relative-caret-position="711">
+              <caret line="82" column="33" lean-forward="true" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
               <folding>
                 <element signature="e#141#156#0" expanded="true" />
               </folding>
@@ -66,6 +116,7 @@
         <option value="$USER_HOME$/Desktop/ccv.py" />
         <option value="$PROJECT_DIR$/human_id_test1.py" />
         <option value="$PROJECT_DIR$/detection_yolov3.py" />
+        <option value="$PROJECT_DIR$/roi_imgs.py" />
         <option value="$PROJECT_DIR$/ccv.py" />
       </list>
     </option>
@@ -91,7 +142,7 @@
             <path>
               <item name="human_identification" type="b2602c69:ProjectViewProjectNode" />
               <item name="human_identification" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -102,7 +153,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/videos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
@@ -129,7 +180,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563274134579</updated>
-      <workItem from="1563274136370" duration="10832000" />
+      <workItem from="1563274136370" duration="19462000" />
     </task>
     <task id="LOCAL-00001" summary="a long long time ago...">
       <created>1563275012229</created>
@@ -145,11 +196,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563342726810</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="generate roi imgs">
+      <created>1563349256517</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1563349256517</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10832000" />
+    <option name="totallyTimeSpent" value="19462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="71" y="0" width="1829" height="1447" extended-state="0" />
@@ -186,7 +244,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="a long long time ago..." />
     <MESSAGE value="sample code for color coherence vector" />
-    <option name="LAST_COMMIT_MESSAGE" value="sample code for color coherence vector" />
+    <MESSAGE value="generate roi imgs" />
+    <option name="LAST_COMMIT_MESSAGE" value="generate roi imgs" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../whereareyou/human_detection_on_floor.py">
@@ -251,18 +310,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/roi_imgs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        <state relative-caret-position="663">
+          <caret line="79" column="60" selection-start-line="79" selection-start-column="60" selection-end-line="79" selection-end-column="60" />
           <folding>
             <element signature="e#103#121#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/detected/one_person/0.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detected/one_person/20.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/ccv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+        <state relative-caret-position="711">
+          <caret line="82" column="33" lean-forward="true" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
           <folding>
             <element signature="e#141#156#0" expanded="true" />
           </folding>

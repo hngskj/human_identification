@@ -9,7 +9,7 @@ import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 
-PATH = 'detected/'
+PATH = 'detected/two_people/'
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input", required=True)
 ap.add_argument("-n", "--threshold", type=int)
@@ -83,7 +83,7 @@ def ccv_plot(img, alpha, beta, gamma, n=64):
     plt.bar(X, Y, align='center')
     plt.yscale('log')
     plt.xticks(X, (['alpha']*n)+(['beta']*n))
-    plt.savefig('output/{}_plot.png'.format(args["input"]))
+    plt.savefig('output/two_people/{}_plot.png'.format(args["input"]))
     plt.show()
 
 
@@ -98,5 +98,5 @@ if __name__ == '__main__':
     # CCV = alpha.tolist() + beta.tolist()
     ccv_plot(img, alpha, beta, gamma, n)
 
-    with open('output/{}_ccv.csv'.format(args["input"]), 'w') as f:
+    with open('output/two_people/{}_ccv.csv'.format(args["input"]), 'w') as f:
         f.write(str(CCV))
