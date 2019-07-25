@@ -7,7 +7,6 @@ from PIL import Image
 import cv2
 import glob
 import random
-from tqdm import tqdm
 
 
 def is_adjacent(x1, y1, x2, y2):
@@ -15,6 +14,7 @@ def is_adjacent(x1, y1, x2, y2):
     x_diff = abs(x1 - x2)
     y_diff = abs(y1 - y2)
     return not (x_diff == 1 and y_diff == 1) and (x_diff <= 1 and y_diff <= 1)
+    # 대각선은 adjacent하지 않다고 봄
 
 
 def find_max_cliques(arr, n):
@@ -23,9 +23,9 @@ def find_max_cliques(arr, n):
     '''
     tau = int(arr.shape[0] * arr.shape[1] * 0.01)  # Classify as coherent is area is >= 1%
     ccv = [0 for i in range(n ** 3 * 2)]
-    unique = np.unique(arr)
+    unique = np.unique(arr) #  입력된 배열에서 중복되지 않는 고유한 요소들의 배열 리턴
     for u in unique:
-        x, y = np.where(arr == u)
+        x, y = np.where(arr == u) # 좌표값
         groups = []
         coherent = 0
         incoherent = 0
@@ -59,15 +59,20 @@ def find_max_cliques(arr, n):
         ccv[index * 2 + 1] = incoherent
 
     return ccv
+    # returns 2*n 행렬 (1행엔 coherent 정보/ 2행엔 incoherent 정보)
 
 
-def get_ccv(img, n):
+
+
+def get_ccv(img, n): # n은 한 채널의 컬러히스토그램에서의 bin의 개수 (color를 몇개로 나눌꺼냐)
     # Blur pixel slightly using avg pooling with 3x3 kernel
     blur_img = cv2.blur(img, (3, 3))
     blur_flat = blur_img.reshape(32 * 32, 3)
 
     # Discretize colors
     hist, edges = np.histogramdd(blur_flat, bins=n)
+    # hist = n-d array
+    # edges = A list of bin edges for each dimension
 
     graph = np.zeros((img.shape[0], img.shape[1]))
     result = np.zeros(blur_img.shape)
@@ -84,7 +89,8 @@ def get_ccv(img, n):
 
     result = result.astype(int)
     return find_max_cliques(graph, n)
-
+    # returns 2*n 행렬 (1행엔 coherent 정보/ 2행엔 incoherent 정보)
+    # CCV for n # of color bins
 
 n = 2  # indicating 2^3 discretized colors
 feature_size = n ** 3 * 2  # Number of discretized colors * 2 for coherent and incoherent
