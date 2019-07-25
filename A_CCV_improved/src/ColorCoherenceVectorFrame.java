@@ -30,7 +30,7 @@ public class ColorCoherenceVectorFrame {
         f.add(l2);
         f.add(l3);
 
-        BufferedImage imgsrc = ImageIO.read(new File("images/amber.jpg"));
+        BufferedImage imgsrc = ImageIO.read(new File("img/amber.jpg"));
         int w = imgsrc.getWidth();
         int h = imgsrc.getHeight();
 
