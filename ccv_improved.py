@@ -11,12 +11,13 @@ import argparse
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+import json
 
-
+THRESHOLD = 0.0003
 PATH = 'detected/two_people/'
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input", required=True)
-ap.add_argument("-n", "--threshold", type=int)
+ap.add_argument("-n", "--threshold", type=int, default="5")
 args = vars(ap.parse_args())
 
 def QuantizeColor(img, n=64):
@@ -39,21 +40,30 @@ def ccv(src, tau=0, n=64):
     # quantize color
     img = QuantizeColor(img, n)
     bgr = cv2.split(img)
-    # bgr = cv2.split(cv2.cvtColor(img, cv2.COLOR_BGR2HSV))
-    # bgr = cv2.split(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY))
     if tau == 0:
-        tau = row * col * 0.1
+        tau = row * col * THRESHOLD
     alpha = np.zeros(n)
     beta = np.zeros(n)
-    gamma = [0,0]
+    R = 0       # CCV_D
+    theta = 0   # CCV_A
+    num = 0     # CCV_N
+
     # labeling
     for i, ch in enumerate(bgr):
-        ret, th = cv2.threshold(ch, 127, 255, 0)
-        ret, labeled, stat, centroids = cv2.connectedComponentsWithStats(th, None, cv2.CC_STAT_AREA, None, connectivity=8)
+        retval, th = cv2.threshold(ch, 127, 255, 0)
+        retval, labels, stats, centroids = cv2.connectedComponentsWithStats(image=th,
+                                                                            labels=None,
+                                                                            stats=cv2.CC_STAT_AREA,
+                                                                            centroids=None,
+                                                                            connectivity=8)
+        print("bgr:",i,bgr[i])
+        print("retval:\n{}\nlabels:\n{}\nstats:\n{}\ncentroids:\n{}".format(retval, labels, stats, centroids))
+        print(retval, len(stats), len(centroids))
         # generate ccv
-        areas = [[v[4], label_idx] for label_idx, v in enumerate(stat)]
-        coord = [[v[0], v[1]] for label_idx, v in enumerate(stat)]
-        # print(areas, coord)
+        areas = [[v[4], label_idx] for label_idx, v in enumerate(stats)]
+        coord = [[v[0], v[1]] for label_idx, v in enumerate(stats)]
+        # print("areas:",areas)
+        # print("coord:",coord)
         # Counting
         for a, c in zip(areas, coord):
             area_size = a[0]
@@ -64,14 +74,13 @@ def ccv(src, tau=0, n=64):
                     alpha[bin_idx] = alpha[bin_idx] + area_size
                 else:
                     beta[bin_idx] = beta[bin_idx] + area_size
-    return alpha, beta, gamma
+    return alpha, beta
 
 
-def ccv_plot(img, alpha, beta, gamma, n=64):
+def ccv_plot(img, alpha, beta, n=64):
     X = [x for x in range(n * 2)]
     Y = alpha.tolist() + beta.tolist()
     im = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    # im = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     plt.subplot(2, 1, 1)
     plt.imshow(im, cmap='gray')
     plt.subplot(2, 1, 2)
@@ -85,13 +94,13 @@ def ccv_plot(img, alpha, beta, gamma, n=64):
 if __name__ == '__main__':
     img = cv2.imread(PATH + args["input"])
     n = args["threshold"]
-    alpha, beta, gamma = ccv(img, tau=0, n=n)
+    alpha, beta = ccv(img, tau=0, n=n)
     a_l = alpha.tolist()
     b_l = beta.tolist()
     CCV = list(zip(a_l, b_l))
-    print(CCV)
+    print("CCV:", CCV)
     # CCV = alpha.tolist() + beta.tolist()
-    ccv_plot(img, alpha, beta, gamma, n)
+    # ccv_plot(img, alpha, beta, n)
 
     with open('output/two_people/{}_ccv.csv'.format(args["input"]), 'w') as f:
         f.write(str(CCV))
