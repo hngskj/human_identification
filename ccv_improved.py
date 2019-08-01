@@ -17,7 +17,7 @@ THRESHOLD = 0.0003
 PATH = 'detected/two_people/'
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input", required=True)
-ap.add_argument("-n", "--threshold", type=int, default="5")
+ap.add_argument("-n", "--threshold", type=int)
 args = vars(ap.parse_args())
 
 def QuantizeColor(img, n=64):
@@ -35,18 +35,19 @@ def QuantizeColor(img, n=64):
 def ccv(src, tau=0, n=64):
     img = src.copy()
     row, col, channels = img.shape
-    # blur
+    print(col, row)
+    center_x = int(col / 2)
+    center_y = int(row / 2)
     img = cv2.GaussianBlur(img, (3, 3), 0)
-    # quantize color
     img = QuantizeColor(img, n)
     bgr = cv2.split(img)
     if tau == 0:
         tau = row * col * THRESHOLD
     alpha = np.zeros(n)
     beta = np.zeros(n)
-    R = 0       # CCV_D
-    theta = 0   # CCV_A
-    num = 0     # CCV_N
+    R = []      # CCV_D
+    theta = []  # CCV_A
+    num = []    # CCV_N
 
     # labeling
     for i, ch in enumerate(bgr):
@@ -56,9 +57,26 @@ def ccv(src, tau=0, n=64):
                                                                             stats=cv2.CC_STAT_AREA,
                                                                             centroids=None,
                                                                             connectivity=8)
-        print("bgr:",i,bgr[i])
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\nbgr:",i)
         print("retval:\n{}\nlabels:\n{}\nstats:\n{}\ncentroids:\n{}".format(retval, labels, stats, centroids))
-        print(retval, len(stats), len(centroids))
+
+        # CCV_N
+        num.append(retval)
+        # CCV_D
+        _R = 0
+        for i in range(retval):
+            x, y = centroids[i]
+            x -= center_x
+            y -= center_y
+            dist = np.sqrt(x**2 + y**2)
+            if i is 0:
+                continue
+            _R += dist
+        R.append(_R)
+
+
+
+
         # generate ccv
         areas = [[v[4], label_idx] for label_idx, v in enumerate(stats)]
         coord = [[v[0], v[1]] for label_idx, v in enumerate(stats)]
@@ -74,7 +92,16 @@ def ccv(src, tau=0, n=64):
                     alpha[bin_idx] = alpha[bin_idx] + area_size
                 else:
                     beta[bin_idx] = beta[bin_idx] + area_size
-    return alpha, beta
+
+    # for i in range(retval):
+    #     _x = int(centroids[i][0])
+    #     _y = int(centroids[i][1])
+    #     cv2.circle(img, (_x, _y), 5, (255,0,0),1)
+    # cv2.imshow('img', img)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
+    print("num:{}\nR:{}".format(num, R))
+    return alpha, beta, num, R
 
 
 def ccv_plot(img, alpha, beta, n=64):
@@ -94,11 +121,11 @@ def ccv_plot(img, alpha, beta, n=64):
 if __name__ == '__main__':
     img = cv2.imread(PATH + args["input"])
     n = args["threshold"]
-    alpha, beta = ccv(img, tau=0, n=n)
+    alpha, beta, num, R = ccv(img, tau=0, n=n)
     a_l = alpha.tolist()
     b_l = beta.tolist()
     CCV = list(zip(a_l, b_l))
-    print("CCV:", CCV)
+    # print("CCV:", CCV)
     # CCV = alpha.tolist() + beta.tolist()
     # ccv_plot(img, alpha, beta, n)
 
