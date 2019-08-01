@@ -9,12 +9,12 @@ The modified Color Coherence Vector based on
 
 """
 TO DO LIST
-    [1] "Normalization" of CCV_N, CCV_D, CCV_A, + Coh / InCoh vals
-    [2] Calculate Euclidean "Distance" between two images per each factors
-    -- decide weights for each factors --
-    [3] add up each factor's distance*weights => and calculate total similarity indicator value
-    -- decide threshold values (in deciding whether those two are identical or not)
-    [4] make a function that returns boolean val // whether those two are identical targets
+    ( O ) [1] "Normalization" of CCV_N, CCV_D, CCV_A, + Coh / InCoh vals
+    ( X ) [2] Calculate Euclidean "Distance" between two images per each factors --> 일단 16.jpg하고 1.jpg하고 비교!!
+    ( X ) ---- decide weights for each factors --
+    ( X ) [3] add up each factor's distance*weights => and calculate total similarity indicator value
+    ( X ) ---- decide threshold values (in deciding whether those two are identical or not)
+    ( X ) [4] make a function that returns boolean val // whether those two are identical targets
 """
 
 import argparse
@@ -129,17 +129,21 @@ def normalize_factors(src, alpha, beta, num, R, theta): # output would be noraml
     img_size = row*col
     center_x = int(col / 2)
     center_y = int(row / 2)
+
     # 1. Normalize coh/incoh (alpha / beta)
     norm_alpha = alpha/img_size
     norm_beta = beta / img_size
+
     # 2. Normalize num (of coh regions)
     norm_num = [float(s)*THRESHOLD for s in num]
     #norm_num = float(num)*THRESHOLD
+
     # 3. Normalize R (distance sum)
     x_diff = int(col-center_x)-center_x
     y_diff = int(col-center_y)-center_y
     max_dist = np.sqrt(x_diff ** 2 + y_diff ** 2)
     norm_R = R / (max(num) * max_dist)
+
     # 4. Normalize theta (angle sum)
     norm_theta = [s / (max(num) * 359) for s in theta]
     # norm_theta = theta / (max(num) * 359)
