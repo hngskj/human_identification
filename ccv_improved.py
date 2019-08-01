@@ -59,20 +59,17 @@ def ccv(src, tau=0, n=64):
                                                                             connectivity=8)
         # print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\nbgr:",i)
         # print("retval:\n{}\nlabels:\n{}\nstats:\n{}\ncentroids:\n{}".format(retval, labels, stats, centroids))
-
         num.append(retval)      # CCV_N
 
         _R = 0
         _theta = 0
-        for i in range(retval):
-            x, y = centroids[i]
+        for i,(x,y) in enumerate(centroids):
+            if i is 0: # background
+                continue
             x -= center_x
             y -= center_y
             dist = np.sqrt(x**2 + y**2)     # CCV_D
             angle = np.arctan2(y, x) * 180 / np.pi      # CCV_A
-
-            if i is 0:
-                continue
             _R += dist
             _theta += angle
         R.append(_R)
@@ -92,13 +89,13 @@ def ccv(src, tau=0, n=64):
                 else:
                     beta[bin_idx] = beta[bin_idx] + area_size
 
-    for i in range(retval):
-        _x = int(centroids[i][0])
-        _y = int(centroids[i][1])
-        cv2.circle(img, (_x, _y), 5, (255,0,0),1)
-    cv2.imshow('img', img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    # for i in range(retval):
+    #     _x = int(centroids[i][0])
+    #     _y = int(centroids[i][1])
+    #     cv2.circle(img, (_x, _y), 5, (255,0,0),1)
+    # cv2.imshow('img', img)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
     return alpha, beta, num, R, theta
 
 
