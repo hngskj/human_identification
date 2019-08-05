@@ -7,18 +7,12 @@ The modified Color Coherence Vector based on
     3. the angle of the color coherence regions (CCV_A)
 """
 
-import argparse
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 import json
+from ccv import config
 
-THRESHOLD = 0.0003
-PATH = 'detected/two_people/'
-ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--input", required=True)
-ap.add_argument("-n", "--threshold", type=int)
-args = vars(ap.parse_args())
 
 def QuantizeColor(img, n=64):
     div = 256 // n
@@ -42,7 +36,7 @@ def ccv(src, tau=0, n=64):
     img = QuantizeColor(img, n)
     bgr = cv2.split(img)
     if tau == 0:
-        tau = row * col * THRESHOLD
+        tau = row * col * config.THRESHOLD_tau
     alpha = np.zeros(n)
     beta = np.zeros(n)
     R = []      # CCV_D
@@ -109,14 +103,14 @@ def ccv_plot(img, alpha, beta, n=64):
     plt.bar(X, Y, align='center')
     plt.yscale('log')
     plt.xticks(X, (['alpha']*n)+(['beta']*n))
-    plt.savefig('output/two_people/{}_plot.png'.format(args["input"]))
+    plt.savefig(config.OUTPUT_PATH + '{}_plot.png'.format(config.IMAGE_NAME))
     plt.show()
 
 
 if __name__ == '__main__':
-    img = cv2.imread(PATH + args["input"])
-    n = args["threshold"]
-    alpha, beta, num, R, theta = ccv(img, tau=0, n=n)
+    img = cv2.imread(config.IMAGE_PATH + config.IMAGE_NAME)
+    # n = args["threshold"]
+    alpha, beta, num, R, theta = ccv(img, tau=0, n=config.THRESHOLD_qauntizer)
     a_l = alpha.tolist()
     b_l = beta.tolist()
     CCV = list(zip(a_l, b_l))
@@ -125,5 +119,5 @@ if __name__ == '__main__':
     # CCV = alpha.tolist() + beta.tolist()
     # ccv_plot(img, alpha, beta, n)
 
-    with open('output/two_people/{}_ccv.csv'.format(args["input"]), 'w') as f:
-        f.write(str(CCV))
+    # with open('output/two_people/{}_ccv.csv'.format(args["input"]), 'w') as f:
+    #     f.write(str(CCV))
