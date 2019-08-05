@@ -140,7 +140,7 @@ def normalize_factors(src, alpha, beta, num, R, theta): # output would be noraml
 
     # 3. Normalize R (distance sum)
     x_diff = int(col-center_x)-center_x
-    y_diff = int(col-center_y)-center_y
+    y_diff = int(row-center_y)-center_y
     max_dist = np.sqrt(x_diff ** 2 + y_diff ** 2)
     norm_R = R / (max(num) * max_dist)
 
