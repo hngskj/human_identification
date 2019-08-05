@@ -32,14 +32,13 @@ ap.add_argument("-i", "--input", required=True)
 ap.add_argument("-n", "--threshold", type=int)
 args = vars(ap.parse_args())
 
-# temporary weight values --> must modify these with some reasonable values later on
-# have to discuss this issue with SkJ opp
-alpha_weight = 0.2
-beta_weight = 0.2
-region_num_weight = 0.2
-distance_weight = 0.2
-angle_weight = 0.2
-# 일단 1:1:1:1:1로 했음
+
+alpha_weight = (float)(1/120)*(1/2)
+beta_weight = (float)(1/120)*(1/2)
+region_num_weight = (float)(1/120)*29
+distance_weight = (float)(1/120)*46
+angle_weight = (float)(1/120)*44
+
 
 class N_img_factors: # N for "normalized"
     def __init__(self, n_alpha, n_beta, n_num, n_R, n_theta):
