@@ -10,16 +10,25 @@ TO DO LIST
 
 import argparse
 import numpy as np
-import cv2
 import json
-from . ccv_improved import *
+from os import listdir
+from os.path import isfile, join
+import cv2
+from ccv_improved import * # ccv, normalize_factors
+
+mypath = 'detected/'
+onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+images = np.empty(len(onlyfiles), dtype=object)
+for n in range(0, len(onlyfiles)):
+    images[n] = cv2.imread(join(mypath, onlyfiles[n]))
+
 
 THRESHOLD = 0.0003
 PATH = 'detected/'
 # PATH = 'detected/two_people/'
 ap = argparse.ArgumentParser()
-ap.add_argument("-i1", "--input1", required=True)
-ap.add_argument("-i2", "--input2", required=True)
+ap.add_argument("-i", "--input", required=True)
+# ap.add_argument("-i2", "--input2", required=True)
 ap.add_argument("-n", "--threshold", type=int)
 args = vars(ap.parse_args())
 
@@ -54,16 +63,31 @@ class N_img_factors: # N for "normalized"
         incoh_dist = img_factors_2.incoh - self.incoh
         incoh_dist = [np.sqrt(s ** 2) for s in incoh_dist]
 
-        region_num_dist = img_factors_2.region_num - self.region_num
+        for i in range(0, len(self.region_num)):
+            region_num_dist = [ s - self.region_num[i] for s in img_factors_2.region_num]
+        # region_num_dist = img_factors_2.region_num - self.region_num
         region_num_dist = [np.sqrt(s ** 2) for s in region_num_dist]
 
         distance_dist = img_factors_2.distance - self.distance
         distance_dist = [np.sqrt(s ** 2) for s in distance_dist]
 
-        angle_dist = img_factors_2.angle - self.angle
+        for i in range(0, len(self.angle)):
+            angle_dist = [ s - self.angle[i] for s in img_factors_2.angle]
+        # angle_dist = img_factors_2.angle - self.angle
         angle_dist = [np.sqrt(s ** 2) for s in angle_dist]
 
-        result = coh_dist*alpha_weight + incoh_dist*beta_weight + region_num_dist*region_num_weight + distance_dist*distance_weight + angle_dist*angle_weight
+        total_alpha = 0
+        total_beta = 0
+        total_region_num = 0
+        total_dist = 0
+        total_angle = 0
+        for s in coh_dist : total_alpha += s
+        for s in incoh_dist : total_beta += s
+        for s in region_num_dist : total_region_num += s
+        for s in distance_dist : total_dist += s
+        for s in angle_dist : total_angle += s
+
+        result = total_alpha*alpha_weight + total_beta*beta_weight + total_region_num*region_num_weight + total_dist*distance_weight + total_angle*angle_weight
         return result
 
 
@@ -75,8 +99,8 @@ add some functions later on
 
 
 if __name__ == '__main__':
-    img1 = cv2.imread(PATH + args["input1"])
-    img2 = cv2.imread(PATH + args["input2"])
+    img1 = images[0]
+    img2 = images[16]
     n = args["threshold"]
     # work on the first img first
     alpha, beta, num, R, theta = ccv(img1, tau=0, n=n)
