@@ -32,12 +32,21 @@ ap.add_argument("-i", "--input", required=True)
 ap.add_argument("-n", "--threshold", type=int)
 args = vars(ap.parse_args())
 
+"""
+weight vals in percentage (sum==1)
 
 alpha_weight = (float)(1/120)*(1/2)
 beta_weight = (float)(1/120)*(1/2)
 region_num_weight = (float)(1/120)*29
 distance_weight = (float)(1/120)*46
 angle_weight = (float)(1/120)*44
+"""
+
+alpha_weight = 50
+beta_weight = 50
+region_num_weight = 2900
+distance_weight = 4600
+angle_weight = 4400
 
 
 class N_img_factors: # N for "normalized"
@@ -112,3 +121,5 @@ if __name__ == '__main__':
     # compare
     similarity_indicator_val = img1_info.calc_total_distance(img2_info)
     print(similarity_indicator_val)
+
+
