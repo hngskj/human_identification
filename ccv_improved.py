@@ -7,6 +7,16 @@ The modified Color Coherence Vector based on
     3. the angle of the color coherence regions (CCV_A)
 """
 
+"""
+TO DO LIST
+    ( O ) [1] "Normalization" of CCV_N, CCV_D, CCV_A, + Coh / InCoh vals
+    ( X ) [2] Calculate Euclidean "Distance" between two images per each factors --> 일단 16.jpg하고 1.jpg하고 비교!!
+    ( X ) ---- decide weights for each factors --
+    ( X ) [3] add up each factor's distance*weights => and calculate total similarity indicator value
+    ( X ) ---- decide threshold values (in deciding whether those two are identical or not)
+    ( X ) [4] make a function that returns boolean val // whether those two are identical targets
+"""
+
 import argparse
 import numpy as np
 import cv2
@@ -14,7 +24,8 @@ import matplotlib.pyplot as plt
 import json
 
 THRESHOLD = 0.0003
-PATH = 'detected/two_people/'
+PATH = 'detected/'
+# PATH = 'detected/two_people/'
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input", required=True)
 ap.add_argument("-n", "--threshold", type=int)
@@ -112,6 +123,32 @@ def ccv_plot(img, alpha, beta, n=64):
     plt.savefig('output/two_people/{}_plot.png'.format(args["input"]))
     plt.show()
 
+def normalize_factors(src, alpha, beta, num, R, theta): # output would be noramlized ver of all these inputs
+    img = src.copy()
+    row, col, channels = img.shape
+    img_size = row*col
+    center_x = int(col / 2)
+    center_y = int(row / 2)
+
+    # 1. Normalize coh/incoh (alpha / beta)
+    norm_alpha = alpha/img_size
+    norm_beta = beta / img_size
+
+    # 2. Normalize num (of coh regions)
+    norm_num = [float(s)*THRESHOLD for s in num]
+    #norm_num = float(num)*THRESHOLD
+
+    # 3. Normalize R (distance sum)
+    x_diff = int(col-center_x)-center_x
+    y_diff = int(col-center_y)-center_y
+    max_dist = np.sqrt(x_diff ** 2 + y_diff ** 2)
+    norm_R = R / (max(num) * max_dist)
+
+    # 4. Normalize theta (angle sum)
+    norm_theta = [s / (max(num) * 359) for s in theta]
+    # norm_theta = theta / (max(num) * 359)
+
+    return norm_alpha, norm_beta, norm_num, norm_R, norm_theta
 
 if __name__ == '__main__':
     img = cv2.imread(PATH + args["input"])
@@ -124,6 +161,10 @@ if __name__ == '__main__':
     print("num:{}\nR:{}\ntheta:{}".format(num, R, theta))
     # CCV = alpha.tolist() + beta.tolist()
     # ccv_plot(img, alpha, beta, n)
+
+    # normalized factor vals
+    N_alpha, N_beta, N_num, N_R, N_theta = normalize_factors(img, alpha, beta, num, R, theta)
+    print("N_alpha:{}\n N_beta:{}\n N_num:{}\n N_R:{}\n N_theta:{}\n ".format(N_alpha, N_beta, N_num, N_R, N_theta))
 
     with open('output/two_people/{}_ccv.csv'.format(args["input"]), 'w') as f:
         f.write(str(CCV))
