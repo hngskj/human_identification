@@ -1,34 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0ae89f0-2796-4bf3-825d-f216e5296a67" name="Default Changelist" comment="slowly figuring out">
-      <change afterPath="$PROJECT_DIR$/ccv/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccv/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/similarity_measure.py" afterDir="false" />
+    <list default="true" id="f0ae89f0-2796-4bf3-825d-f216e5296a67" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MDist_MCD.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccv.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccv_improved.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccv_improved.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected/9.jpg" beforeDir="false" />
     </list>
     <ignored path="videos/" />
     <ignored path="detected/" />
@@ -57,35 +32,54 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5860465">
+    <splitter split-orientation="horizontal" split-proportion="0.46768236">
       <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ccv_improved.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1008">
-                  <caret line="93" column="37" lean-forward="true" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
+                <state relative-caret-position="577">
+                  <caret line="142" column="34" selection-start-line="142" selection-start-column="34" selection-end-line="142" selection-end-column="34" />
                   <folding>
-                    <element signature="e#335#350#0" expanded="true" />
+                    <element signature="e#880#895#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/similarity_measure.py">
-              <provider selected="true" editor-type-id="text-editor" />
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/MDist_MCD.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="24">
+                  <caret line="1" column="67" lean-forward="true" selection-start-line="1" selection-start-column="67" selection-end-line="1" selection-end-column="67" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
             </entry>
           </file>
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ccv/config.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="192">
-                  <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+                  <caret line="8" column="55" lean-forward="true" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/comparison_with_ccv.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2088">
+                  <caret line="99" column="26" lean-forward="true" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#545#560#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -119,14 +113,15 @@
         <option value="$PROJECT_DIR$/j_CCV_sample.py" />
         <option value="$PROJECT_DIR$/ccv/__init__.py" />
         <option value="$PROJECT_DIR$/ccv.py" />
-        <option value="$PROJECT_DIR$/ccv_improved.py" />
         <option value="$PROJECT_DIR$/ccv/config.py" />
         <option value="$PROJECT_DIR$/similarity_measure.py" />
+        <option value="$PROJECT_DIR$/ccv_improved.py" />
+        <option value="$PROJECT_DIR$/MDist_MCD.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-6" />
+    <option name="x" value="-9" />
     <option name="width" value="2451" />
     <option name="height" value="1447" />
   </component>
@@ -147,11 +142,6 @@
               <item name="human_identification" type="b2602c69:ProjectViewProjectNode" />
               <item name="human_identification" type="462c0819:PsiDirectoryNode" />
               <item name="ccv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="human_identification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="human_identification" type="462c0819:PsiDirectoryNode" />
-              <item name="detected" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -188,7 +178,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.similarity_measure">
+  <component name="RunManager" selected="Python.MDist_MCD">
+    <configuration name="MDist_MCD" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="human_identification" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MDist_MCD.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="human_identification" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -255,9 +264,11 @@
     <list>
       <item itemvalue="Python.ccv_improved" />
       <item itemvalue="Python.similarity_measure" />
+      <item itemvalue="Python.MDist_MCD" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.MDist_MCD" />
         <item itemvalue="Python.similarity_measure" />
         <item itemvalue="Python.ccv_improved" />
       </list>
@@ -274,6 +285,7 @@
       <option name="presentableId" value="Default" />
       <updated>1563274134579</updated>
       <workItem from="1563274136370" duration="56020000" />
+      <workItem from="1564988025654" duration="3561000" />
     </task>
     <task id="LOCAL-00001" summary="a long long time ago...">
       <created>1563275012229</created>
@@ -342,12 +354,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56020000" />
+    <option name="totallyTimeSpent" value="59581000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="2451" height="1447" extended-state="0" />
+    <frame x="-9" y="0" width="2451" height="1447" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09326641" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09410289" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -364,13 +377,13 @@
       <window_info anchor="right" x="0" y="0" width="504" height="1247" id="Documentation" order="0" sideWeight="0.3561151" side_tool="true" weight="0.35155165" />
       <window_info anchor="right" id="R Graphics" order="1" />
       <window_info anchor="right" id="R Packages" order="2" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32984555" />
-      <window_info anchor="right" id="SciView" order="4" weight="0.32934728" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32956922" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.38143036" />
       <window_info anchor="right" id="Commander" order="5" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-      <window_info anchor="right" id="Run" order="8" sideWeight="0.6438849" visible="true" weight="0.1873693" />
-      <window_info anchor="right" x="1638" y="91" width="903" height="1313" id="Python Console" order="9" type="WINDOWED" weight="0.4603393" />
+      <window_info anchor="right" id="Run" order="8" sideWeight="0.6438849" weight="0.1873693" />
+      <window_info anchor="right" x="1418" y="459" width="1123" height="945" id="Python Console" order="9" type="WINDOWED" visible="true" weight="0.4603393" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,32 +412,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/ccv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#23#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ccv.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/output/ccv.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state>
-          <caret column="43" lean-forward="true" selection-start-column="43" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/ccv.py" />
+    <entry file="file://$PROJECT_DIR$/ccv.csv" />
+    <entry file="file://$PROJECT_DIR$/output/ccv.csv" />
     <entry file="file://$PROJECT_DIR$/detect_and_transform.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -455,16 +445,7 @@
     <entry file="file://$PROJECT_DIR$/detected/one_person/20.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/j_CCV_sample.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="e#97#115#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/j_CCV_sample.py" />
     <entry file="file://$PROJECT_DIR$/A_CCV_improved/src/ColorCoherenceVectorFrame.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -488,22 +469,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/similarity_measure.py" />
     <entry file="file://$PROJECT_DIR$/ccv/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+          <caret line="8" column="55" lean-forward="true" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/similarity_measure.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/comparison_with_ccv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2088">
+          <caret line="99" column="26" lean-forward="true" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+          <folding>
+            <element signature="e#545#560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ccv_improved.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="93" column="37" lean-forward="true" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
+        <state relative-caret-position="577">
+          <caret line="142" column="34" selection-start-line="142" selection-start-column="34" selection-end-line="142" selection-end-column="34" />
           <folding>
-            <element signature="e#335#350#0" expanded="true" />
+            <element signature="e#880#895#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MDist_MCD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="67" lean-forward="true" selection-start-line="1" selection-start-column="67" selection-end-line="1" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
