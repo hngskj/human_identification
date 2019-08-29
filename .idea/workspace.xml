@@ -4,7 +4,6 @@
     <list default="true" id="f0ae89f0-2796-4bf3-825d-f216e5296a67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MDist_MCD.py" beforeDir="false" afterPath="$PROJECT_DIR$/MDist_MCD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccv_improved.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccv_improved.py" afterDir="false" />
     </list>
     <ignored path="videos/" />
     <ignored path="detected/" />
@@ -40,8 +39,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/MDist_MCD.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="504">
-                  <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+                <state relative-caret-position="888">
+                  <caret line="40" column="68" lean-forward="true" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
                   <folding>
                     <element signature="e#171#189#0" expanded="true" />
                   </folding>
@@ -77,10 +76,19 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ccv_improved.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2544">
-                  <caret line="169" column="39" lean-forward="true" selection-start-line="169" selection-start-column="39" selection-end-line="169" selection-end-column="39" />
+                <state relative-caret-position="-264">
+                  <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/normal_test.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="192">
+                  <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
                   <folding>
-                    <element signature="e#880#895#0" expanded="true" />
+                    <element signature="e#122#128#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -117,8 +125,9 @@
         <option value="$PROJECT_DIR$/ccv.py" />
         <option value="$PROJECT_DIR$/ccv/config.py" />
         <option value="$PROJECT_DIR$/similarity_measure.py" />
-        <option value="$PROJECT_DIR$/ccv_improved.py" />
         <option value="$PROJECT_DIR$/MDist_MCD.py" />
+        <option value="$PROJECT_DIR$/ccv_improved.py" />
+        <option value="$PROJECT_DIR$/normal_test.py" />
       </list>
     </option>
   </component>
@@ -150,12 +159,6 @@
               <item name="human_identification" type="b2602c69:ProjectViewProjectNode" />
               <item name="human_identification" type="462c0819:PsiDirectoryNode" />
               <item name="output" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="human_identification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="human_identification" type="462c0819:PsiDirectoryNode" />
-              <item name="output" type="462c0819:PsiDirectoryNode" />
-              <item name="two_people" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="human_identification" type="b2602c69:ProjectViewProjectNode" />
@@ -310,7 +313,7 @@
       <updated>1563274134579</updated>
       <workItem from="1563274136370" duration="56020000" />
       <workItem from="1564988025654" duration="20968000" />
-      <workItem from="1565843114141" duration="5403000" />
+      <workItem from="1565843114141" duration="5665000" />
     </task>
     <task id="LOCAL-00001" summary="a long long time ago...">
       <created>1563275012229</created>
@@ -382,14 +385,22 @@
       <option name="project" value="LOCAL" />
       <updated>1565067161574</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Make new module for normality check">
+      <created>1567062928123</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1567062928123</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82391000" />
+    <option name="totallyTimeSpent" value="82653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="8" y="0" width="2477" height="1447" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09391808" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -431,7 +442,8 @@
     <MESSAGE value="all done?" />
     <MESSAGE value="minor changes for CCV_D &amp; A" />
     <MESSAGE value="Sample Code&#10;Calculate Mahalanobis distance using Minimum Covariance Determinant" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sample Code&#10;Calculate Mahalanobis distance using Minimum Covariance Determinant" />
+    <MESSAGE value="Make new module for normality check" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make new module for normality check" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../whereareyou/human_detection_on_floor.py">
@@ -517,16 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ccv_improved.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2544">
-          <caret line="169" column="39" lean-forward="true" selection-start-line="169" selection-start-column="39" selection-end-line="169" selection-end-column="39" />
-          <folding>
-            <element signature="e#880#895#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/output/1.jpg_ccv.csv">
       <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
@@ -539,10 +541,45 @@
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/output/two_people/200_0.jpg_ccv.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/two_people/600_0.jpg_ccv.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/two_people/1.jpg_ccv.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normal_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding>
+            <element signature="e#122#128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccv_improved.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264">
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MDist_MCD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="888">
+          <caret line="40" column="68" lean-forward="true" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
           <folding>
             <element signature="e#171#189#0" expanded="true" />
           </folding>
